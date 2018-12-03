@@ -1,0 +1,50 @@
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.label-style {
+    float: left;
+    margin-top: 15px;
+}
+
+.radio-label-style {
+    float: left;
+    margin-top: -5px;
+}
+
+.radio-style {
+    padding: 7px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    text-align: left;
+}
+
+.reg-btn {
+    float: left;
+    outline: none;
+    color: #fff;
+    padding: 5px 25px;
+    margin-top: 20px;
+    border-radius: 4px;
+    background: #007bff;
+    border-color: #007bff;
+    border: 1px solid transparent;
+}
+
+.reg-btn:hover {
+    color: #007bff;
+    background: #fff;
+    border-color: #007bff;
+}
+

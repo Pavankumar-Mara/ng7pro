@@ -1,0 +1,68 @@
+<h2>Registration for job</h2>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 offset-md-4">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label class="label-style">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" (keyup)="onEnterName($event.target.value)"/>
+            <div *ngIf="submitedName && registerForm.controls.firstName.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.controls.firstName.errors.pattern">Name should not be numeric</div>
+              <div *ngIf="registerForm.controls.firstName.errors.required">Name is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-style">Date of birth</label>
+            <input type="date" formControlName="dateOfBirth" class="form-control" (change)="onEnterDOB($event.target.value)" />
+            <div *ngIf="submitDOB && registerForm.controls.dateOfBirth.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.controls.dateOfBirth.errors.required">DOB is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="radio-label-style">Gender</label>
+            <br />
+            <div class="radio-style">
+              <input type="radio" value="male" name="gender" 
+              (click)="onEnterGender('Male')"> Male
+              <input type="radio" value="female" name="gender" style="margin-left: 60px;"
+              (click)="onEnterGender('Female')">
+              Female
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-style">Reason for job change</label>
+            <textarea type="text" formControlName="reasonForJobChange" class="form-control" (keyup)="onEnterReason($event.target.value)"></textarea>
+            <div *ngIf="submitReason && registerForm.controls.reasonForJobChange.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.controls.reasonForJobChange.errors.required">Reason is required</div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="label-style">Last salary figure</label>
+            <input type="number" formControlName="cctc" class="form-control" (keyup)="onEnterCCTC($event.target.value)"/>
+            <div *ngIf="submitCCTC && registerForm.controls.cctc.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.controls.cctc.errors.required">Current CTC is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-style">Expected Salary</label>
+            <input type="number" formControlName="ectc" class="form-control" (change)="onEnterECTC($event.target.value)"/>
+          </div>
+
+          <div *ngIf="allClear" class="form-group">
+            <button ng-model = "buttonRegister"class="btn btn-primary reg-btn" type="submit" >Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>  
